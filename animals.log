@@ -1,0 +1,36 @@
+[2025-08-31 19:48:15] [ INFO ] [Animal:45] Id: 1
+Name: Molly
+Type: cat
+----------
+
+[2025-08-31 19:48:15] [ INFO ] [Animal:45] Id: 2
+Name: Helga
+Type: dog
+----------
+
+[2025-08-31 19:48:15] [ INFO ] [Animal:45] Id: 3
+Name: Melba
+Type: dog
+----------
+
+[2025-08-31 19:48:15] [ INFO ] [Animal:45] Id: 4
+Name: Rocky
+Type: turtle
+----------
+
+[2025-08-31 19:48:15] [ INFO ] [Animal:49] WARNING: Animal has been deleted
+[2025-08-31 19:48:15] [ INFO ] [Animal:55] Id: 1
+Name: Molly
+Type: cat
+----------
+
+[2025-08-31 19:48:15] [ INFO ] [Animal:55] Id: 2
+Name: Helga
+Type: dog
+----------
+
+[2025-08-31 19:48:15] [ INFO ] [Animal:55] Id: 3
+Name: Melba
+Type: dog
+----------
+
