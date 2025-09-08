@@ -8,6 +8,9 @@ public class Dentist {
   private String firstName;
   private String lastName;
 
+  public Dentist() {
+  }
+
   public Dentist(Long id, Long registration, String firstName, String lastName) {
     this.id = id;
     this.registration = registration;

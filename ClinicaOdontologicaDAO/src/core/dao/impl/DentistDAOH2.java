@@ -16,7 +16,7 @@ public class DentistDAOH2 implements IDAO<Dentist> {
   public static final String SQL_SELECT_ID = "SELECT * FROM dentists WHERE id = ?";
   public static final String SQL_UPDATE_ID = "UPDATE dentists SET registration = ?, firstName = ?, lastName = ? WHERE id = ?";
   public static final String SQL_DELETE_ID = "DELETE FROM dentists WHERE id = ?";
-  public static final String SQL_SELECT_ALL = "SELECT * FROM dentist";
+  public static final String SQL_SELECT_ALL = "SELECT * FROM dentists";
 
   @Override
   public Dentist save(Dentist dentist) {
@@ -33,7 +33,7 @@ public class DentistDAOH2 implements IDAO<Dentist> {
       ResultSet rs = psInsert.getGeneratedKeys();
       while (rs.next()) {
         dentist.setId(rs.getLong(1));
-        LOGGER.info("INFO: Este es el odontólogo que se guardó: " + dentist);
+        LOGGER.info("INFO: Este es el odontólogo que se guardó: " + dentist.getFirstName() + " " + dentist.getLastName());
       }
     } catch (Exception e) {
       LOGGER.error("WARN: " + e);

@@ -10,3 +10,74 @@
 [2025-09-07 23:54:12] [main] [DentistDAOH2:84] WARN  WARN: Iniciando la eliminación del odontólogo con id: 2
 [2025-09-07 23:54:12] [main] [DentistDAOH2:91] WARN  WARN: Se eliminó el odontólogo con id: 2
 [2025-09-07 23:54:12] [main] [DentistDAOH2:138] INFO  INFO: Iniciando la búsqueda de todos los odontólogos.
+[2025-09-08 08:27:50] [main] [DentistDAOH2:25] INFO  Se inició una operación de guardado de odontólogo.
+[2025-09-08 08:27:50] [main] [DentistDAOH2:36] INFO  INFO: Este es el odontólogo que se guardó: core.model.Dentist@5119fb47
+[2025-09-08 08:27:50] [main] [DentistDAOH2:25] INFO  Se inició una operación de guardado de odontólogo.
+[2025-09-08 08:27:50] [main] [DentistDAOH2:36] INFO  INFO: Este es el odontólogo que se guardó: core.model.Dentist@6973b51b
+[2025-09-08 08:27:51] [main] [DentistDAOH2:25] INFO  Se inició una operación de guardado de odontólogo.
+[2025-09-08 08:27:51] [main] [DentistDAOH2:36] INFO  INFO: Este es el odontólogo que se guardó: core.model.Dentist@15ff3e9e
+[2025-09-08 08:27:51] [main] [DentistDAOH2:110] INFO  INFO: Iniciando la búsqueda de un odontólogo.
+[2025-09-08 08:27:51] [main] [DentistDAOH2:119] INFO  INFO: Consultamos el odontólogo con id: 2 es: core.model.Dentist@1d2adfbe
+[2025-09-08 08:27:51] [main] [DentistDAOH2:55] INFO  INFO: Iniciando la actualización de un odontólogo.
+[2025-09-08 08:27:52] [main] [DentistDAOH2:84] WARN  WARN: Iniciando la eliminación del odontólogo con id: 2
+[2025-09-08 08:27:52] [main] [DentistDAOH2:91] WARN  WARN: Se eliminó el odontólogo con id: 2
+[2025-09-08 08:27:52] [main] [DentistDAOH2:138] INFO  INFO: Iniciando la búsqueda de todos los odontólogos.
+[2025-09-08 08:27:52] [main] [DentistDAOH2:150] ERROR ERROR: Tabla "DENTIST" no encontrada
+Table "DENTIST" not found; SQL statement:
+SELECT * FROM dentist [42102-232]
+[2025-09-08 08:30:59] [main] [DentistDAOH2:25] INFO  Se inició una operación de guardado de odontólogo.
+[2025-09-08 08:30:59] [main] [DentistDAOH2:36] INFO  INFO: Este es el odontólogo que se guardó: core.model.Dentist@7193666c
+[2025-09-08 08:30:59] [main] [DentistDAOH2:25] INFO  Se inició una operación de guardado de odontólogo.
+[2025-09-08 08:30:59] [main] [DentistDAOH2:36] INFO  INFO: Este es el odontólogo que se guardó: core.model.Dentist@1ab3a8c8
+[2025-09-08 08:31:00] [main] [DentistDAOH2:25] INFO  Se inició una operación de guardado de odontólogo.
+[2025-09-08 08:31:00] [main] [DentistDAOH2:36] INFO  INFO: Este es el odontólogo que se guardó: core.model.Dentist@5fdcaa40
+[2025-09-08 08:31:00] [main] [DentistDAOH2:110] INFO  INFO: Iniciando la búsqueda de un odontólogo.
+[2025-09-08 08:31:00] [main] [DentistDAOH2:119] INFO  INFO: Consultamos el odontólogo con id: 2 es: core.model.Dentist@3febb011
+[2025-09-08 08:31:00] [main] [DentistDAOH2:55] INFO  INFO: Iniciando la actualización de un odontólogo.
+[2025-09-08 08:31:01] [main] [DentistDAOH2:84] WARN  WARN: Iniciando la eliminación del odontólogo con id: 2
+[2025-09-08 08:31:01] [main] [DentistDAOH2:91] WARN  WARN: Se eliminó el odontólogo con id: 2
+[2025-09-08 08:31:01] [main] [DentistDAOH2:138] INFO  INFO: Iniciando la búsqueda de todos los odontólogos.
+[2025-09-08 08:31:01] [main] [DentistDAOH2:150] ERROR ERROR: Tabla "DENTIST" no encontrada
+Table "DENTIST" not found; SQL statement:
+SELECT * FROM dentist [42102-232]
+[2025-09-08 08:33:20] [main] [DentistDAOH2:25] INFO  Se inició una operación de guardado de odontólogo.
+[2025-09-08 08:33:20] [main] [DentistDAOH2:36] INFO  INFO: Este es el odontólogo que se guardó: core.model.Dentist@6973b51b
+[2025-09-08 08:33:20] [main] [DentistDAOH2:25] INFO  Se inició una operación de guardado de odontólogo.
+[2025-09-08 08:33:20] [main] [DentistDAOH2:36] INFO  INFO: Este es el odontólogo que se guardó: core.model.Dentist@61862a7f
+[2025-09-08 08:33:21] [main] [DentistDAOH2:25] INFO  Se inició una operación de guardado de odontólogo.
+[2025-09-08 08:33:21] [main] [DentistDAOH2:36] INFO  INFO: Este es el odontólogo que se guardó: core.model.Dentist@5e0826e7
+[2025-09-08 08:33:22] [main] [DentistDAOH2:110] INFO  INFO: Iniciando la búsqueda de un odontólogo.
+[2025-09-08 08:33:22] [main] [DentistDAOH2:119] INFO  INFO: Consultamos el odontólogo con id: 2 es: core.model.Dentist@131774fe
+[2025-09-08 08:33:22] [main] [DentistDAOH2:55] INFO  INFO: Iniciando la actualización de un odontólogo.
+[2025-09-08 08:33:22] [main] [DentistDAOH2:84] WARN  WARN: Iniciando la eliminación del odontólogo con id: 2
+[2025-09-08 08:33:22] [main] [DentistDAOH2:91] WARN  WARN: Se eliminó el odontólogo con id: 2
+[2025-09-08 08:33:22] [main] [DentistDAOH2:138] INFO  INFO: Iniciando la búsqueda de todos los odontólogos.
+[2025-09-08 08:33:22] [main] [DentistDAOH2:147] INFO  INFO: Odontólogo con id: 1, registro: 132, nombre: Mik Cudi, apellido: Godoy
+[2025-09-08 08:33:22] [main] [DentistDAOH2:147] INFO  INFO: Odontólogo con id: 3, registro: 789, nombre: Paolin, apellido: Lin Lin
+[2025-09-08 08:40:40] [main] [DentistDAOH2:25] INFO  Se inició una operación de guardado de odontólogo.
+[2025-09-08 08:40:40] [main] [DentistDAOH2:36] INFO  INFO: Este es el odontólogo que se guardó: core.model.Dentist@51fadaff
+[2025-09-08 08:41:54] [main] [DentistDAOH2:25] INFO  Se inició una operación de guardado de odontólogo.
+[2025-09-08 08:41:54] [main] [DentistDAOH2:36] INFO  INFO: Este es el odontólogo que se guardó: CarolinaGarro
+[2025-09-08 08:42:27] [main] [DentistDAOH2:25] INFO  Se inició una operación de guardado de odontólogo.
+[2025-09-08 08:42:27] [main] [DentistDAOH2:36] INFO  INFO: Este es el odontólogo que se guardó: Carolina Garro
+[2025-09-08 09:01:28] [main] [DentistDAOH2:55] INFO  INFO: Iniciando la actualización de un odontólogo.
+[2025-09-08 09:03:26] [main] [DentistDAOH2:55] INFO  INFO: Iniciando la actualización de un odontólogo.
+[2025-09-08 09:03:49] [main] [DentistDAOH2:55] INFO  INFO: Iniciando la actualización de un odontólogo.
+[2025-09-08 09:07:09] [main] [DentistDAOH2:110] INFO  INFO: Iniciando la búsqueda de un odontólogo.
+[2025-09-08 09:08:55] [main] [DentistDAOH2:138] INFO  INFO: Iniciando la búsqueda de todos los odontólogos.
+[2025-09-08 09:08:56] [main] [DentistDAOH2:147] INFO  INFO: Odontólogo con id: 1, registro: 12345, nombre: Juan Andrés, apellido: Pérez
+[2025-09-08 09:12:06] [main] [DentistDAOH2:55] INFO  INFO: Iniciando la actualización de un odontólogo.
+[2025-09-08 09:12:37] [main] [DentistDAOH2:25] INFO  Se inició una operación de guardado de odontólogo.
+[2025-09-08 09:12:37] [main] [DentistDAOH2:36] INFO  INFO: Este es el odontólogo que se guardó: Vanina Godoy
+[2025-09-08 09:12:38] [main] [DentistDAOH2:25] INFO  Se inició una operación de guardado de odontólogo.
+[2025-09-08 09:12:38] [main] [DentistDAOH2:36] INFO  INFO: Este es el odontólogo que se guardó: Mik Cudi
+[2025-09-08 09:12:38] [main] [DentistDAOH2:25] INFO  Se inició una operación de guardado de odontólogo.
+[2025-09-08 09:12:38] [main] [DentistDAOH2:36] INFO  INFO: Este es el odontólogo que se guardó: Paolin Lin Lin
+[2025-09-08 09:12:38] [main] [DentistDAOH2:110] INFO  INFO: Iniciando la búsqueda de un odontólogo.
+[2025-09-08 09:12:39] [main] [DentistDAOH2:119] INFO  INFO: Consultamos el odontólogo con id: 2 es: core.model.Dentist@74fe5c40
+[2025-09-08 09:12:39] [main] [DentistDAOH2:55] INFO  INFO: Iniciando la actualización de un odontólogo.
+[2025-09-08 09:12:39] [main] [DentistDAOH2:84] WARN  WARN: Iniciando la eliminación del odontólogo con id: 2
+[2025-09-08 09:12:39] [main] [DentistDAOH2:91] WARN  WARN: Se eliminó el odontólogo con id: 2
+[2025-09-08 09:12:40] [main] [DentistDAOH2:138] INFO  INFO: Iniciando la búsqueda de todos los odontólogos.
+[2025-09-08 09:12:40] [main] [DentistDAOH2:147] INFO  INFO: Odontólogo con id: 1, registro: 132, nombre: Mik Cudi, apellido: Godoy
+[2025-09-08 09:12:40] [main] [DentistDAOH2:147] INFO  INFO: Odontólogo con id: 3, registro: 789, nombre: Paolin, apellido: Lin Lin
