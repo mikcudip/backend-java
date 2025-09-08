@@ -1,0 +1,14 @@
+[2025-09-08 11:35:21] [main] [DentistDAOH2:28] INFO  Se inició una operación de guardado de odontólogo.
+[2025-09-08 11:35:21] [main] [DentistDAOH2:39] INFO  INFO: Este es el odontólogo que se guardó: Vanina Godoy
+[2025-09-08 11:35:21] [main] [DentistDAOH2:28] INFO  Se inició una operación de guardado de odontólogo.
+[2025-09-08 11:35:21] [main] [DentistDAOH2:39] INFO  INFO: Este es el odontólogo que se guardó: Mik Cudi
+[2025-09-08 11:35:21] [main] [DentistDAOH2:28] INFO  Se inició una operación de guardado de odontólogo.
+[2025-09-08 11:35:21] [main] [DentistDAOH2:39] INFO  INFO: Este es el odontólogo que se guardó: Paolin Lin Lin
+[2025-09-08 11:35:21] [main] [DentistDAOH2:113] INFO  INFO: Iniciando la búsqueda de un odontólogo.
+[2025-09-08 11:35:22] [main] [DentistDAOH2:122] INFO  INFO: Consultamos el odontólogo con id: 2 es: model.Dentist@1d2adfbe
+[2025-09-08 11:35:22] [main] [DentistDAOH2:58] INFO  INFO: Iniciando la actualización de un odontólogo.
+[2025-09-08 11:35:22] [main] [DentistDAOH2:87] WARN  WARN: Iniciando la eliminación del odontólogo con id: 2
+[2025-09-08 11:35:22] [main] [DentistDAOH2:94] WARN  WARN: Se eliminó el odontólogo con id: 2
+[2025-09-08 11:35:23] [main] [DentistDAOH2:141] INFO  INFO: Iniciando la búsqueda de todos los odontólogos.
+[2025-09-08 11:35:23] [main] [DentistDAOH2:150] INFO  INFO: Odontólogo con id: 1, registro: 132, nombre: Mik Cudi, apellido: Godoy
+[2025-09-08 11:35:23] [main] [DentistDAOH2:150] INFO  INFO: Odontólogo con id: 3, registro: 789, nombre: Paolin, apellido: Lin Lin
