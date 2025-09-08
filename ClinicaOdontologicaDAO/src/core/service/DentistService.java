@@ -3,10 +3,6 @@ package core.service;
 import core.dao.IDAO;
 import core.model.Dentist;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.util.List;
 
 public class DentistService {

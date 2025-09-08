@@ -1,0 +1,12 @@
+[2025-09-07 23:54:12] [main] [DentistDAOH2:25] INFO  Se inició una operación de guardado de odontólogo.
+[2025-09-07 23:54:12] [main] [DentistDAOH2:36] INFO  INFO: Este es el odontólogo que se guardó: core.model.Dentist@2f7298b
+[2025-09-07 23:54:12] [main] [DentistDAOH2:25] INFO  Se inició una operación de guardado de odontólogo.
+[2025-09-07 23:54:12] [main] [DentistDAOH2:36] INFO  INFO: Este es el odontólogo que se guardó: core.model.Dentist@72057ecf
+[2025-09-07 23:54:12] [main] [DentistDAOH2:25] INFO  Se inició una operación de guardado de odontólogo.
+[2025-09-07 23:54:12] [main] [DentistDAOH2:36] INFO  INFO: Este es el odontólogo que se guardó: core.model.Dentist@15ff3e9e
+[2025-09-07 23:54:12] [main] [DentistDAOH2:110] INFO  INFO: Iniciando la búsqueda de un odontólogo.
+[2025-09-07 23:54:12] [main] [DentistDAOH2:119] INFO  INFO: Consultamos el odontólogo con id: 2 es: core.model.Dentist@10e31a9a
+[2025-09-07 23:54:12] [main] [DentistDAOH2:55] INFO  INFO: Iniciando la actualización de un odontólogo.
+[2025-09-07 23:54:12] [main] [DentistDAOH2:84] WARN  WARN: Iniciando la eliminación del odontólogo con id: 2
+[2025-09-07 23:54:12] [main] [DentistDAOH2:91] WARN  WARN: Se eliminó el odontólogo con id: 2
+[2025-09-07 23:54:12] [main] [DentistDAOH2:138] INFO  INFO: Iniciando la búsqueda de todos los odontólogos.

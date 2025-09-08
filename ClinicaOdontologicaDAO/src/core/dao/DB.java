@@ -7,21 +7,21 @@ import java.sql.Statement;
 
 public class DB {
   public static final String SQL_TABLE_CREATE_DENTIST = "DROP TABLE IF EXISTS dentists;" +
-      "CREATE TABLE DENTIST" +
+      "CREATE TABLE dentists" +
       "(" +
       "id INT AUTO_INCREMENT PRIMARY KEY," +
       "registration INT NOT NULL," +
       "firstName VARCHAR(100) NOT NULL," +
-      "lastName VARCHAR(100) NOT NULL," +
+      "lastName VARCHAR(100) NOT NULL" +
       ")";
   public static final String SQL_TABLE_CREATE_PATIENT = "DROP TABLE IF EXISTS patients;" +
-      "CREATE TABLE DENTIST" +
+      "CREATE TABLE patients" +
       "(" +
       "id INT AUTO_INCREMENT PRIMARY KEY," +
       "firstName VARCHAR(100) NOT NULL," +
       "lastName VARCHAR(100) NOT NULL," +
       "cardIdentity VARCHAR(100) NOT NULL," +
-      "admissionDate DATETIME NOT NULL," +
+      "admissionDate DATETIME NOT NULL" +
       ")";
 
   public static Connection getConnection() throws ClassNotFoundException, SQLException {
