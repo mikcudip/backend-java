@@ -20,15 +20,19 @@ public class DentistService {
     return dentistRepository.save(dentist);
   }
 
-  public Dentist findById(Integer id) {
+  public Dentist findById(Long id) {
     return dentistRepository.findById(id).orElse(null);
+  }
+
+  public boolean existsById(Long id) {
+    return dentistRepository.existsById(id);
   }
 
   public void update(Dentist dentist) {
     dentistRepository.save(dentist);
   }
 
-  public void delete(Integer id) {
+  public void delete(Long id) {
     dentistRepository.deleteById(id);
   }
 

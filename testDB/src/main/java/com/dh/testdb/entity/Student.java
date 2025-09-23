@@ -1,23 +1,17 @@
-package com.dh.clinicaodontologicaii.entities;
+package com.dh.testdb.entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 @Entity
-@Table(name = "dentists")
-public class Dentist {
+public class Student {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "dentist_id")
   private Long id;
-  @Column(name = "registration")
-  private Integer registration;
-  @Column(name = "first_name", nullable = false)
   private String firstName;
-  @Column(name = "last_name", nullable = false)
   private String lastName;
-
-  public Dentist() {
-  }
 
   public Long getId() {
     return id;
@@ -25,14 +19,6 @@ public class Dentist {
 
   public void setId(Long id) {
     this.id = id;
-  }
-
-  public Integer getRegistration() {
-    return registration;
-  }
-
-  public void setRegistration(Integer registration) {
-    this.registration = registration;
   }
 
   public String getFirstName() {

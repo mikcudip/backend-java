@@ -1,7 +1,6 @@
 package com.dh.clinicaodontologicaii.service;
 
-import com.dh.clinicaodontologicaii.entities.Dentist;
-import com.dh.clinicaodontologicaii.repository.DentistRepository;
+import com.dh.clinicaodontologicaii.entities.Patient;
 import com.dh.clinicaodontologicaii.repository.PatientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,23 +16,35 @@ public class PatientService {
     this.patientRepository = patientRepository;
   }
 
-  public Dentist save(Dentist dentist) {
-    return patientRepository.save(dentist);
+  public Patient save(Patient patient) {
+    return patientRepository.save(patient);
   }
 
-  public Dentist findById(Integer id) {
+  public Patient findById(Long id) {
     return patientRepository.findById(id).orElse(null);
   }
 
-  public void update(Dentist dentist) {
-    patientRepository.save(dentist);
+  public boolean existsById(Long id) {
+    return patientRepository.existsById(id);
   }
 
-  public void delete(Integer id) {
+  public void update(Patient patient) {
+    patientRepository.save(patient);
+  }
+
+  public void delete(Long id) {
     patientRepository.deleteById(id);
   }
 
-  public List<Dentist> findAll() {
+  public List<Patient> findAll() {
     return patientRepository.findAll();
+  }
+
+  public Patient findByFirstName(String firstName) {
+    return patientRepository.findByFirstName(firstName).orElse(null);
+  }
+
+  public Patient findByLastName(String lastName) {
+    return patientRepository.findByLastName(lastName).orElse(null);
   }
 }

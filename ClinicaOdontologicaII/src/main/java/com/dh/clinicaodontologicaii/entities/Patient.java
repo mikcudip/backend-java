@@ -10,7 +10,7 @@ public class Patient {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "patient_id")
-  private Integer id;
+  private Long id;
   @Column(name = "first_name")
   private String firstName;
   @Column(name = "last_name")
@@ -19,15 +19,18 @@ public class Patient {
   private String cardIdentity;
   @Column(name = "admission_date")
   private LocalDate admissionDate;
+  @OneToOne(cascade = CascadeType.ALL)
+  @JoinColumn(name = "id_address", referencedColumnName = "id")
+  private Address address;
 
   public Patient() {
   }
 
-  public Integer getId() {
+  public Long getId() {
     return id;
   }
 
-  public void setId(Integer id) {
+  public void setId(Long id) {
     this.id = id;
   }
 
@@ -61,5 +64,13 @@ public class Patient {
 
   public void setAdmissionDate(LocalDate admissionDate) {
     this.admissionDate = admissionDate;
+  }
+
+  public Address getAddress() {
+    return address;
+  }
+
+  public void setAddress(Address address) {
+    this.address = address;
   }
 }
