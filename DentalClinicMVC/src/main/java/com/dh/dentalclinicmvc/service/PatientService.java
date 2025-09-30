@@ -9,33 +9,33 @@ import java.util.List;
 
 @Service
 public class PatientService {
-  private IDAO<Patient> patientDAO;
+  private IDAO<Patient> patientIDAO;
 
   public PatientService() {
-    this.patientDAO = new PatientDAOH2();
+    this.patientIDAO = new PatientDAOH2();
   }
 
   public Patient save(Patient patient) {
-    return patientDAO.save(patient);
+    return patientIDAO.save(patient);
   }
 
   public void update(Patient patient) {
-    patientDAO.update(patient);
+    patientIDAO.update(patient);
   }
 
   public void delete(Long id) {
-    patientDAO.delete(id);
+    patientIDAO.delete(id);
   }
 
   public Patient findById(Long id) {
-    return patientDAO.findById(id);
+    return patientIDAO.findById(id);
   }
 
   public List<Patient> findAll() {
-    return patientDAO.findAll();
+    return patientIDAO.findAll();
   }
 
   public Patient findByEmail(String email) {
-    return patientDAO.findByString(email);
+    return patientIDAO.findByString(email);
   }
 }

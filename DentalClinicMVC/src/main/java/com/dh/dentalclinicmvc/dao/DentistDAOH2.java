@@ -2,53 +2,130 @@ package com.dh.dentalclinicmvc.dao;
 
 import com.dh.dentalclinicmvc.model.Dentist;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class DentistDAOH2 implements IDAO<Dentist> {
 
-  public static final String SQL_SAVE_DENTIST = "INSERT INTO dentists(firstName,lastName,registration) VALUES (?,?,?)";
+  public static final String SQL_INSERT_DENTIST = "INSERT INTO dentists(firstName,lastName,registration) VALUES (?,?,?)";
+  public static final String SQL_SELECT_DENTIST_ID = "SELECT * FROM dentists WHERE id = ?";
+  public static final String SQL_DELETE_DENTIST_ID = "DELETE FROM dentists WHERE id=?";
+  public static final String SQL_SELECT_DENTISTS_ALL = "SELECT * FROM dentists;";
 
   @Override
-  public Dentist save(Dentist entity) {
+  public Dentist save(Dentist dentist) {
     Connection connection = null;
     try {
       connection = DB.getConnection();
-      PreparedStatement preparedStatement = connection.prepareStatement(SQL_SAVE_DENTIST);
-      preparedStatement.setString(1, entity.getFirstName());
-      preparedStatement.setString(2, entity.getFirstName());
-      preparedStatement.setLong(3, entity.getRegistration());
-      preparedStatement.executeUpdate();
+      PreparedStatement preparedStatement = connection.prepareStatement(SQL_INSERT_DENTIST, Statement.RETURN_GENERATED_KEYS);
+      preparedStatement.setString(1, dentist.getFirstName());
+      preparedStatement.setString(2, dentist.getFirstName());
+      preparedStatement.setLong(3, dentist.getRegistration());
+      preparedStatement.execute();
+
+      ResultSet resultSet = preparedStatement.getGeneratedKeys();
+      while (resultSet.next()) {
+        dentist.setId(resultSet.getLong(1));
+      }
     } catch (Exception e) {
+      e.printStackTrace();
+    } finally {
       try {
         connection.close();
-      } catch (SQLException ex) {
-        throw new RuntimeException(ex);
+      } catch (Exception e) {
+        e.printStackTrace();
       }
     }
-    return null;
+    return dentist;
   }
 
   @Override
   public Dentist findById(Long id) {
-    return null;
+    Connection connection = null;
+    Dentist dentist = null;
+    try {
+      connection = DB.getConnection();
+      PreparedStatement preparedStatement = connection.prepareStatement(SQL_SELECT_DENTIST_ID);
+      preparedStatement.setLong(1, id);
+      ResultSet resultSet = preparedStatement.executeQuery();
+      while (resultSet.next()) {
+        dentist = new Dentist(resultSet.getLong(1),resultSet.getString(2),resultSet.getString(3),resultSet.getLong(4));
+      }
+    } catch (Exception e) {
+      e.printStackTrace();
+    } finally {
+      try {
+        connection.close();
+      } catch (Exception e) {
+        e.printStackTrace();
+      }
+    }
+    return dentist;
   }
 
   @Override
-  public void update(Dentist entity) {
-
+  public void update(Dentist dentist) {
+    Connection connection = null;
+    try {
+      connection = DB.getConnection();
+      PreparedStatement preparedStatement = connection.prepareStatement("UPDATE dentists SET registration=?,firstName=?,lastName=? WHERE id=?");
+      preparedStatement.setString(1, dentist.getFirstName());
+      preparedStatement.setString(2, dentist.getFirstName());
+      preparedStatement.setLong(3, dentist.getRegistration());
+      preparedStatement.setLong(4, dentist.getId());
+      preparedStatement.executeUpdate();
+    } catch (Exception e) {
+      e.printStackTrace();
+    } finally {
+      try {
+        connection.close();
+      } catch (SQLException e) {
+        e.printStackTrace();
+      }
+    }
   }
 
   @Override
   public void delete(Long id) {
-
+    Connection connection = null;
+    try {
+      connection =DB.getConnection();
+      PreparedStatement preparedStatement = connection.prepareStatement(SQL_DELETE_DENTIST_ID);
+      preparedStatement.setLong(1, id);
+      preparedStatement.executeUpdate();
+    } catch (Exception e) {
+      e.printStackTrace();
+    }  finally {
+      try {
+        connection.close();
+      } catch (Exception e) {
+        e.printStackTrace();
+      }
+    }
   }
 
   @Override
   public List<Dentist> findAll() {
-    return List.of();
+    Connection connection = null;
+    List<Dentist> dentists = new ArrayList<>();
+    try {
+      connection = DB.getConnection();
+      PreparedStatement preparedStatement = connection.prepareStatement(SQL_SELECT_DENTISTS_ALL);
+      ResultSet resultSet = preparedStatement.executeQuery();
+      while (resultSet.next()) {
+        dentists.add(new Dentist(resultSet.getLong(1),resultSet.getString(2),resultSet.getString(3),resultSet.getLong(4)));
+      }
+    } catch (Exception e) {
+      e.printStackTrace();
+    } finally {
+      try {
+        connection.close();
+      } catch (Exception e) {
+        e.printStackTrace();
+      }
+    }
+    return dentists;
   }
 
   @Override

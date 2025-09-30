@@ -11,7 +11,7 @@ public class PatientDAOH2 implements IDAO<Patient> {
   public static final String SQL_SELECT_PATIENTS = "SELECT * FROM patients";
   public static final String SQL_DELETE_PATIENT_ID = "DELETE FROM patients WHERE id = ?";
   private AddressDAOH2 addressDAOH2 = new AddressDAOH2();
-  public static final String SQL_INSERT_PATIENTS = "INSERT INTO patients (firstName, lastName, email, cardIdentity,admissionDate, address_id) VALUES (?, ?, ?, ?, ?, ?)";
+  public static final String SQL_INSERT_PATIENT = "INSERT INTO patients (firstName, lastName, email, cardIdentity,admissionDate, address_id) VALUES (?, ?, ?, ?, ?, ?)";
   public static final String SQL_SELECT_PATIENT_ID = "SELECT * FROM patients WHERE id = ?";
   public static final String SQL_UPDATE_PATIENT_ID = "UPDATE patients SET firstName=?, lastName=?, email=?, cardIdentity=?, admissionDate=?, address_id=? WHERE id=?";
   public static final String SQL_SELECT_PATIENT_EMAIL = "SELECT * FROM patients WHERE email = ?";
@@ -23,7 +23,7 @@ public class PatientDAOH2 implements IDAO<Patient> {
       AddressDAOH2 addressDAOH2 = new AddressDAOH2();
       Address address = addressDAOH2.save(patient.getAddress());
       connection = DB.getConnection();
-      PreparedStatement preparedStatement = connection.prepareStatement(SQL_INSERT_PATIENTS, Statement.RETURN_GENERATED_KEYS);
+      PreparedStatement preparedStatement = connection.prepareStatement(SQL_INSERT_PATIENT, Statement.RETURN_GENERATED_KEYS);
       preparedStatement.setString(1, patient.getFirstName());
       preparedStatement.setString(2, patient.getLastName());
       preparedStatement.setString(3, patient.getEmail());

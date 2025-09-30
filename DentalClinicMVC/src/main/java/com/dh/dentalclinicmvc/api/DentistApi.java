@@ -13,7 +13,7 @@ public class DentistApi {
   PatientService patientService;
 
   @Autowired
-  public PatientApi(PatientService patientService) {
+  public DentistApi(PatientService patientService) {
     this.patientService = patientService;
   }
 

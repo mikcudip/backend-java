@@ -3,23 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Perfil del Paciente (¡Casi una ficha técnica!)</title>
-  <style>
-    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #282c34; color: #abb2bf; margin: 20px; text-align: center; }
-    .container { background-color: #3b4048; padding: 25px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); display: inline-block; }
-    h1 { color: #61afef; }
-    p { margin: 10px 0; font-size: 1.1em; }
-    strong { color: #c678dd; }
-    em { color: #98c379; }
-  </style>
+  <title>Document</title>
 </head>
 <body>
 <div class="container">
-  <h1>¡Bienvenido, usuario de prueba! 👋</h1>
-  <p>Parece que has conseguido un 'fetch' exitoso. Aquí están tus datos:</p>
-  <p><strong>Nombre:</strong> <em th:text="${firstName}">[Nombre No Encontrado - Error 404: User Not Found]</em></p>
-  <p><strong>Apellido:</strong> <em th:text="${lastName}">[Apellido No Encontrado - ¡Oops, bug en la BBDD!]</em></p>
-  <p>¡No es una interfaz gráfica de usuario revolucionaria, pero funciona! 😉</p>
+  <p>Hola Paciente <span th:text="${firstNamePatient}"/> <span th:text="${lastNamePatient}"/></p>
+  <p>Hola Dentista <span th:text="${firstNameDentist}"/> <span th:text="${lastNameDentist}"/><span th:text="${registrationDentist}"/></p>
 </div>
 </body>
 </html>
