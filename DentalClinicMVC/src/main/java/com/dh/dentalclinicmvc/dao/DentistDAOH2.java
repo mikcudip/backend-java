@@ -20,7 +20,7 @@ public class DentistDAOH2 implements IDAO<Dentist> {
       connection = DB.getConnection();
       PreparedStatement preparedStatement = connection.prepareStatement(SQL_INSERT_DENTIST, Statement.RETURN_GENERATED_KEYS);
       preparedStatement.setString(1, dentist.getFirstName());
-      preparedStatement.setString(2, dentist.getFirstName());
+      preparedStatement.setString(2, dentist.getLastName());
       preparedStatement.setLong(3, dentist.getRegistration());
       preparedStatement.execute();
 

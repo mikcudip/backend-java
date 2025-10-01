@@ -6,14 +6,17 @@ public class Dentist {
   private String lastName;
   private Long registration;
 
-  public Dentist(Long id, String firstName, String lastName, Long registration) {
-    this.id = id;
+  public Dentist() {
+  }
+
+  public Dentist(String firstName, String lastName, Long registration) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.registration = registration;
   }
 
-  public Dentist(String firstName, String lastName, Long registration) {
+  public Dentist(Long id, String firstName, String lastName, Long registration) {
+    this.id = id;
     this.firstName = firstName;
     this.lastName = lastName;
     this.registration = registration;

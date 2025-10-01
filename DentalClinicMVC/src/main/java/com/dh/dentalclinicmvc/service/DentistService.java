@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class DentistService {
+public class DentistService implements BaseService<Dentist, Long> {
   private final IDAO<Dentist> dentistIDAO;
 
   public DentistService() {
