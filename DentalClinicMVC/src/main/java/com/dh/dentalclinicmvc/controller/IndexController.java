@@ -4,7 +4,6 @@ import com.dh.dentalclinicmvc.model.Dentist;
 import com.dh.dentalclinicmvc.model.Patient;
 import com.dh.dentalclinicmvc.service.DentistService;
 import com.dh.dentalclinicmvc.service.PatientService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,10 +11,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-@RequestMapping("/index")
+@RequestMapping("/home")
 public class IndexController {
-  private PatientService patientService;
-  private DentistService dentistService;
+  private final PatientService patientService;
+  private final DentistService dentistService;
 
   public IndexController(PatientService patientService, DentistService dentistService) {
     this.patientService = patientService;
@@ -31,6 +30,6 @@ public class IndexController {
     model.addAttribute("firstNameDentist", dentist.getFirstName());
     model.addAttribute("lastNameDentist", dentist.getLastName());
     model.addAttribute("registrationDentist", dentist.getRegistration());
-    return "index";
+    return "home";
   }
 }

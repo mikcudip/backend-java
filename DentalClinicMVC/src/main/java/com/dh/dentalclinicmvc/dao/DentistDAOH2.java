@@ -12,6 +12,7 @@ public class DentistDAOH2 implements IDAO<Dentist> {
   public static final String SQL_SELECT_DENTIST_ID = "SELECT * FROM dentists WHERE id = ?";
   public static final String SQL_DELETE_DENTIST_ID = "DELETE FROM dentists WHERE id=?";
   public static final String SQL_SELECT_DENTISTS_ALL = "SELECT * FROM dentists;";
+  public static final String SQL_UPDATE_DENTIST_ID = "UPDATE dentists SET firstName=?,lastName=?,registration=? WHERE id=?";
 
   @Override
   public Dentist save(Dentist dentist) {
@@ -69,7 +70,7 @@ public class DentistDAOH2 implements IDAO<Dentist> {
     Connection connection = null;
     try {
       connection = DB.getConnection();
-      PreparedStatement preparedStatement = connection.prepareStatement("UPDATE dentists SET registration=?,firstName=?,lastName=? WHERE id=?");
+      PreparedStatement preparedStatement = connection.prepareStatement(SQL_UPDATE_DENTIST_ID);
       preparedStatement.setString(1, dentist.getFirstName());
       preparedStatement.setString(2, dentist.getFirstName());
       preparedStatement.setLong(3, dentist.getRegistration());

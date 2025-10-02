@@ -19,8 +19,7 @@ public class DentistApi implements BaseApi<Dentist, Long> {
   }
 
   @Override
-  @PostMapping
-  public ResponseEntity<Dentist> save(@RequestBody Dentist dentist) {
+  @PostMapping public ResponseEntity<Dentist> save(@RequestBody Dentist dentist) {
     return ResponseEntity.ok(dentistService.save(dentist));
   }
 
