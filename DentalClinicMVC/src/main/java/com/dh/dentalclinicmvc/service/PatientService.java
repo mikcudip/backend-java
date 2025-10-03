@@ -1,7 +1,6 @@
 package com.dh.dentalclinicmvc.service;
 
 import com.dh.dentalclinicmvc.dao.IDAO;
-import com.dh.dentalclinicmvc.dao.PatientDAOH2;
 import com.dh.dentalclinicmvc.model.Patient;
 import org.springframework.stereotype.Service;
 
@@ -11,8 +10,8 @@ import java.util.List;
 public class PatientService implements BaseService<Patient, Long> {
   private IDAO<Patient> patientIDAO;
 
-  public PatientService() {
-    this.patientIDAO = new PatientDAOH2();
+  public PatientService(IDAO<Patient> patientIDAO) {
+    this.patientIDAO = patientIDAO;
   }
 
   public Patient save(Patient patient) {

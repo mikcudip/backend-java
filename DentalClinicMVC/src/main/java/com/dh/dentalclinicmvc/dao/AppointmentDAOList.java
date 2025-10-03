@@ -1,10 +1,12 @@
 package com.dh.dentalclinicmvc.dao;
 
 import com.dh.dentalclinicmvc.model.Appointment;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class AppointmentDAOList implements IDAO<Appointment> {
   private List<Appointment> appointments;
 

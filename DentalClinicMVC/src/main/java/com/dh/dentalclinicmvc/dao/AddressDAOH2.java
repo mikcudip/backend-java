@@ -1,6 +1,7 @@
 package com.dh.dentalclinicmvc.dao;
 
 import com.dh.dentalclinicmvc.model.Address;
+import org.springframework.stereotype.Component;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,6 +10,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class AddressDAOH2 implements IDAO<Address> {
   public static final String SQL_INSERT_ADDRESSES = "INSERT INTO addresses (street,number,location,province) VALUES (?,?,?,?)";
   public static final String SQL_SELECT_ADDRESS_ID = "SELECT * FROM addresses WHERE id = ?";

@@ -4,6 +4,7 @@ import com.dh.dentalclinicmvc.model.Appointment;
 import com.dh.dentalclinicmvc.service.AppointmentService;
 import com.dh.dentalclinicmvc.service.DentistService;
 import com.dh.dentalclinicmvc.service.PatientService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,6 +20,7 @@ public class AppointmentApi implements BaseApi<Appointment, Long> {
   private final DentistService dentistService;
   private final AppointmentService appointmentService;
 
+  @Autowired
   public AppointmentApi(AppointmentService appointmentService, PatientService patientService, DentistService dentistService) {
     this.appointmentService = appointmentService;
     this.patientService = patientService;

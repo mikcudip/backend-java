@@ -2,11 +2,13 @@ package com.dh.dentalclinicmvc.dao;
 
 import com.dh.dentalclinicmvc.model.Address;
 import com.dh.dentalclinicmvc.model.Patient;
+import org.springframework.stereotype.Component;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class PatientDAOH2 implements IDAO<Patient> {
   public static final String SQL_SELECT_PATIENTS = "SELECT * FROM patients";
   public static final String SQL_DELETE_PATIENT_ID = "DELETE FROM patients WHERE id = ?";

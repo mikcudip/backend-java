@@ -1,6 +1,5 @@
 package com.dh.dentalclinicmvc.service;
 
-import com.dh.dentalclinicmvc.dao.AppointmentDAOList;
 import com.dh.dentalclinicmvc.dao.IDAO;
 import com.dh.dentalclinicmvc.model.Appointment;
 import org.springframework.stereotype.Service;
@@ -11,8 +10,8 @@ import java.util.List;
 public class AppointmentService implements BaseService<Appointment, Long> {
   private IDAO<Appointment> appointmentIDAO;
 
-  public AppointmentService() {
-    this.appointmentIDAO = new AppointmentDAOList();
+  public AppointmentService(IDAO<Appointment> appointmentIDAO) {
+    this.appointmentIDAO = appointmentIDAO;
   }
 
   @Override
