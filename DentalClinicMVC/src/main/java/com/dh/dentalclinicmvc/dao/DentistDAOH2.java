@@ -11,7 +11,7 @@ public class DentistDAOH2 implements IDAO<Dentist> {
   public static final String SQL_INSERT_DENTIST = "INSERT INTO dentists(firstName,lastName,registration) VALUES (?,?,?)";
   public static final String SQL_SELECT_DENTIST_ID = "SELECT * FROM dentists WHERE id = ?";
   public static final String SQL_DELETE_DENTIST_ID = "DELETE FROM dentists WHERE id=?";
-  public static final String SQL_SELECT_DENTISTS_ALL = "SELECT * FROM dentists;";
+  public static final String SQL_SELECT_DENTISTS_ALL = "SELECT * FROM dentists";
   public static final String SQL_UPDATE_DENTIST_ID = "UPDATE dentists SET firstName=?,lastName=?,registration=? WHERE id=?";
 
   @Override
