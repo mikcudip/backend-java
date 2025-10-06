@@ -17,14 +17,19 @@ public class DentistService implements IDentistService {
 
   @Override
   public Dentist save(Dentist dentist) {
-    if (dentistRepository.existsById(dentist.getId())) {
-      return null;
+    if (dentist.getId() != null) {
+      if (dentistRepository.existsById(dentist.getId())) {
+        return null;
+      }
     }
     return dentistRepository.save(dentist);
   }
 
   @Override
   public boolean update(Dentist dentist) {
+    if (dentist.getId() == null) {
+      return false;
+    }
     if (!dentistRepository.existsById(dentist.getId())) {
       return false;
     }
@@ -34,6 +39,9 @@ public class DentistService implements IDentistService {
 
   @Override
   public boolean deleteById(Long id) {
+    if (id == null) {
+      return false;
+    }
     if (!dentistRepository.existsById(id)) {
       return false;
     }

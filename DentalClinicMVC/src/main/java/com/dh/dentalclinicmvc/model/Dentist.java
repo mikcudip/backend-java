@@ -18,7 +18,7 @@ public class Dentist {
   @Column(name = "registration")
   private Long registration;
 
-  @OneToMany(mappedBy = "dentist", fetch = FetchType.LAZY)
+  @OneToMany(mappedBy = "dentist")
   private List<Appointment> appointment;
 
   public Dentist() {

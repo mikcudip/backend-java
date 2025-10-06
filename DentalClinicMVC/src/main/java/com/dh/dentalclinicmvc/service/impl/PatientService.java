@@ -17,23 +17,31 @@ public class PatientService implements IPatientService {
 
   @Override
   public Patient save(Patient patient) {
-    if (patientRepository.existsById(patient.getId())) {
-      return null;
+    if (patient.getId() != null) {
+      if (patientRepository.existsById(patient.getId())) {
+        return null;
+      }
     }
     return patientRepository.save(patient);
   }
 
   @Override
-  public boolean update(Patient dentist) {
-    if (!patientRepository.existsById(dentist.getId())) {
+  public boolean update(Patient patient) {
+    if (patient.getId() == null) {
       return false;
     }
-    patientRepository.save(dentist);
+    if (!patientRepository.existsById(patient.getId())) {
+      return false;
+    }
+    patientRepository.save(patient);
     return true;
   }
 
   @Override
   public boolean deleteById(Long id) {
+    if (id == null) {
+      return false;
+    }
     if (!patientRepository.existsById(id)) {
       return false;
     }
@@ -51,6 +59,7 @@ public class PatientService implements IPatientService {
     return patientRepository.findById(id).orElse(null);
   }
 
+  @Override
   public Patient findByEmail(String email) {
     return patientRepository.findByEmail(email).orElse(null);
   }

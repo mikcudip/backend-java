@@ -17,14 +17,19 @@ public class AppointmentService implements IAppointmentService {
 
   @Override
   public Appointment save(Appointment appointment) {
-    if (appointmentRepository.existsById(appointment.getId())) {
-      return null;
+    if (appointment.getId() != null) {
+      if (appointmentRepository.existsById(appointment.getId())) {
+        return null;
+      }
     }
     return appointmentRepository.save(appointment);
   }
 
   @Override
   public boolean update(Appointment appointment) {
+    if (appointment.getId() == null) {
+      return false;
+    }
     if (!appointmentRepository.existsById(appointment.getId())) {
       return false;
     }
@@ -34,13 +39,15 @@ public class AppointmentService implements IAppointmentService {
 
   @Override
   public boolean deleteById(Long id) {
+    if (id == null) {
+      return false;
+    }
     if (!appointmentRepository.existsById(id)) {
       return false;
     }
     appointmentRepository.deleteById(id);
     return true;
   }
-
 
   @Override
   public boolean existsById(Long id) {

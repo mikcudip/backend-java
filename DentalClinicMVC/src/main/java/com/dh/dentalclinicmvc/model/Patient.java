@@ -27,7 +27,7 @@ public class Patient {
   @JoinColumn(name = "address_id", referencedColumnName = "id")
   private Address address;
 
-  @OneToMany(mappedBy = "patient", fetch = FetchType.LAZY)
+  @OneToMany(mappedBy = "patient")
   private List<Appointment> appointment;
 
   public Patient() {
