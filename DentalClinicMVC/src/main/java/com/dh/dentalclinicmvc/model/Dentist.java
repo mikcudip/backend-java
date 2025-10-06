@@ -2,12 +2,14 @@ package com.dh.dentalclinicmvc.model;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "dentists")
 public class Dentist {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "dentist_id")
+  @Column(name = "id")
   private Long id;
   @Column(name = "first_name")
   private String firstName;
@@ -15,6 +17,9 @@ public class Dentist {
   private String lastName;
   @Column(name = "registration")
   private Long registration;
+
+  @OneToMany(mappedBy = "dentist", fetch = FetchType.LAZY)
+  private List<Appointment> appointment;
 
   public Dentist() {
   }
@@ -49,5 +54,13 @@ public class Dentist {
 
   public void setRegistration(Long registration) {
     this.registration = registration;
+  }
+
+  public List<Appointment> getAppointment() {
+    return appointment;
+  }
+
+  public void setAppointment(List<Appointment> appointment) {
+    this.appointment = appointment;
   }
 }

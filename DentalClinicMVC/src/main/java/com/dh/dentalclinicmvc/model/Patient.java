@@ -3,13 +3,14 @@ package com.dh.dentalclinicmvc.model;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "patients")
 public class Patient {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "patient_id")
+  @Column(name = "id")
   private Long id;
   @Column(name = "first_name")
   private String firstName;
@@ -21,7 +22,13 @@ public class Patient {
   private Integer cardIdentity;
   @Column(name = "admission_date")
   private LocalDate admissionDate;
+
+  @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+  @JoinColumn(name = "address_id", referencedColumnName = "id")
   private Address address;
+
+  @OneToMany(mappedBy = "patient", fetch = FetchType.LAZY)
+  private List<Appointment> appointment;
 
   public Patient() {
   }
@@ -80,5 +87,13 @@ public class Patient {
 
   public void setAddress(Address address) {
     this.address = address;
+  }
+
+  public List<Appointment> getAppointment() {
+    return appointment;
+  }
+
+  public void setAppointment(List<Appointment> appointment) {
+    this.appointment = appointment;
   }
 }

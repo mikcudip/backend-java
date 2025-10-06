@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 public class Address {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "address_id")
+  @Column(name = "id")
   private Long id;
   @Column(name = "street")
   private String street;
@@ -17,6 +17,9 @@ public class Address {
   private String location;
   @Column(name = "province")
   private String province;
+
+  @OneToOne(mappedBy = "address")
+  private Patient patient;
 
   public Address() {
   }

@@ -9,12 +9,15 @@ import java.time.LocalDate;
 public class Appointment {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "appointment_id")
+  @Column(name = "id")
   private Long id;
-  private Patient patient;
-  private Dentist dentist;
   @Column(name = "date")
   private LocalDate date;
+
+  @ManyToOne(fetch = FetchType.EAGER)
+  private Patient patient;
+  @ManyToOne(fetch = FetchType.EAGER)
+  private Dentist dentist;
 
   public Appointment() {
   }

@@ -51,6 +51,10 @@ public class PatientService implements IPatientService {
     return patientRepository.findById(id).orElse(null);
   }
 
+  public Patient findByEmail(String email) {
+    return patientRepository.findByEmail(email).orElse(null);
+  }
+
   @Override
   public List<Patient> findAll() {
     return patientRepository.findAll();
