@@ -2,8 +2,8 @@ package com.dh.dentalclinicmvc.controller;
 
 import com.dh.dentalclinicmvc.model.Dentist;
 import com.dh.dentalclinicmvc.model.Patient;
-import com.dh.dentalclinicmvc.service.DentistService;
-import com.dh.dentalclinicmvc.service.PatientService;
+import com.dh.dentalclinicmvc.service.impl.DentistService;
+import com.dh.dentalclinicmvc.service.impl.PatientService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

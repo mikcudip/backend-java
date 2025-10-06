@@ -3,13 +3,15 @@ package com.dh.dentalclinicmvc.service;
 import java.util.List;
 
 public interface BaseService<T, ID> {
-  public T save(T entity);
+  T save(T entity);
 
-  public T findById(ID id);
+  boolean update(T dentist);
 
-  public void update(T dentist);
+  boolean deleteById(ID id);
 
-  public void delete(ID id);
+  boolean existsById(ID id);
 
-  public List<T> findAll();
+  T findById(ID id);
+
+  List<T> findAll();
 }

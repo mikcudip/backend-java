@@ -9,9 +9,9 @@ public interface BaseApi<T, ID> {
 
   ResponseEntity<T> findById(ID id);
 
-  void update(T entity);
+  ResponseEntity<String> update(T entity);
 
-  void delete(ID id);
+  ResponseEntity<String> deleteById(ID id);
 
   ResponseEntity<List<T>> findAll();
 }

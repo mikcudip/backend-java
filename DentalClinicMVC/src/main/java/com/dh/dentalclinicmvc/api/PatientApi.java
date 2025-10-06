@@ -1,7 +1,7 @@
 package com.dh.dentalclinicmvc.api;
 
 import com.dh.dentalclinicmvc.model.Patient;
-import com.dh.dentalclinicmvc.service.PatientService;
+import com.dh.dentalclinicmvc.service.IPatientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,10 +11,10 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/patients")
 public class PatientApi implements BaseApi<Patient, Long> {
-  PatientService patientService;
+  private final IPatientService patientService;
 
   @Autowired
-  public PatientApi(PatientService patientService) {
+  public PatientApi(IPatientService patientService) {
     this.patientService = patientService;
   }
 
@@ -26,20 +26,30 @@ public class PatientApi implements BaseApi<Patient, Long> {
 
   @Override
   @PutMapping
-  public void update(@RequestBody Patient patient) {
-    patientService.update(patient);
+  public ResponseEntity<String> update(@RequestBody Patient patient) {
+    if (!patientService.update(patient)) {
+      return ResponseEntity.ok("No se puede actualizar un paciente que no existe en la base de datos.");
+    }
+    return ResponseEntity.ok("Se actualizó el paciente.");
   }
 
   @Override
   @DeleteMapping("/{id}")
-  public void delete(@PathVariable Long id) {
-    patientService.delete(id);
+  public ResponseEntity<String> deleteById(@PathVariable Long id) {
+    if (!patientService.deleteById(id)) {
+      return ResponseEntity.ok("No se puede eliminar un paciente que no existe en la base de datos.");
+    }
+    return ResponseEntity.ok("Se eliminó el paciente.");
   }
 
   @Override
   @GetMapping("/{id}")
   public ResponseEntity<Patient> findById(@PathVariable Long id) {
-    return ResponseEntity.ok(patientService.findById(id));
+    Patient patient = patientService.findById(id);
+    if (patient == null) {
+      return ResponseEntity.notFound().build();
+    }
+    return ResponseEntity.ok(patient);
   }
 
   @Override

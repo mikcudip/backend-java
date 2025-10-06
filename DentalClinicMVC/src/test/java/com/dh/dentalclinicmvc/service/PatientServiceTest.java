@@ -1,6 +1,7 @@
 package com.dh.dentalclinicmvc.service;
 
 import com.dh.dentalclinicmvc.model.Patient;
+import com.dh.dentalclinicmvc.service.impl.PatientService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
