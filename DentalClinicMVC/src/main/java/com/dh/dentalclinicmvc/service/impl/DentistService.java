@@ -1,5 +1,7 @@
 package com.dh.dentalclinicmvc.service.impl;
 
+import com.dh.dentalclinicmvc.api.exception.NullIdException;
+import com.dh.dentalclinicmvc.api.exception.ResourceNotFoundException;
 import com.dh.dentalclinicmvc.entity.Dentist;
 import com.dh.dentalclinicmvc.repository.DentistRepository;
 import com.dh.dentalclinicmvc.service.IDentistService;
@@ -19,7 +21,7 @@ public class DentistService implements IDentistService {
   @Override
   public Dentist save(Dentist dentist) {
     if (dentist.getId() != null) {
-      if (dentistRepository.existsById(dentist.getId())) {
+      if (existsById(dentist.getId())) {
         return null;
       }
     }
@@ -31,7 +33,7 @@ public class DentistService implements IDentistService {
     if (dentist.getId() == null) {
       return false;
     }
-    if (!dentistRepository.existsById(dentist.getId())) {
+    if (!existsById(dentist.getId())) {
       return false;
     }
     dentistRepository.save(dentist);
@@ -39,15 +41,16 @@ public class DentistService implements IDentistService {
   }
 
   @Override
-  public boolean deleteById(Long id) {
+  public Dentist deleteById(Long id) {
     if (id == null) {
-      return false;
+      throw new NullIdException("Id is null");
     }
-    if (!dentistRepository.existsById(id)) {
-      return false;
+    if (!existsById(id)) {
+      throw new ResourceNotFoundException("Dentist not found with id: " + id);
     }
+    Dentist dentist = findById(id);
     dentistRepository.deleteById(id);
-    return true;
+    return dentist;
   }
 
   @Override

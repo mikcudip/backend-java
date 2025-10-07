@@ -33,7 +33,7 @@ public class PatientApi {
 
   @DeleteMapping("/{id}")
   public ResponseEntity<String> deleteById(@PathVariable Long id) {
-    if (!patientService.deleteById(id)) {
+    if (patientService.deleteById(id) == null) {
       return ResponseEntity.ok("No se puede eliminar un paciente que no existe en la base de datos.");
     }
     return ResponseEntity.ok("Se eliminó el paciente.");

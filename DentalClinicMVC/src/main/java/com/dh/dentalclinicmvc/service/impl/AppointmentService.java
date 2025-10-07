@@ -1,15 +1,14 @@
 package com.dh.dentalclinicmvc.service.impl;
 
+import com.dh.dentalclinicmvc.api.exception.NullIdException;
+import com.dh.dentalclinicmvc.api.exception.ResourceNotFoundException;
 import com.dh.dentalclinicmvc.dto.AppointmentDTO;
 import com.dh.dentalclinicmvc.entity.Appointment;
 import com.dh.dentalclinicmvc.entity.Dentist;
-import com.dh.dentalclinicmvc.entity.Patient;
 import com.dh.dentalclinicmvc.repository.AppointmentRepository;
 import com.dh.dentalclinicmvc.service.IAppointmentService;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,7 +23,7 @@ public class AppointmentService implements IAppointmentService {
   @Override
   public Appointment save(Appointment appointment) {
     if (appointment.getId() != null) {
-      if (appointmentRepository.existsById(appointment.getId())) {
+      if (existsById(appointment.getId())) {
         return null;
       }
     }
@@ -34,7 +33,7 @@ public class AppointmentService implements IAppointmentService {
   @Override
   public AppointmentDTO saveDTO(AppointmentDTO appointmentDTO) {
     if (appointmentDTO.getId() != null) {
-      if (appointmentRepository.existsById(appointmentDTO.getId())) {
+      if (existsById(appointmentDTO.getId())) {
         return null;
       }
     }
@@ -48,7 +47,7 @@ public class AppointmentService implements IAppointmentService {
     if (appointment.getId() == null) {
       return false;
     }
-    if (!appointmentRepository.existsById(appointment.getId())) {
+    if (!existsById(appointment.getId())) {
       return false;
     }
     appointmentRepository.save(appointment);
@@ -60,7 +59,7 @@ public class AppointmentService implements IAppointmentService {
     if (appointmentDTO.getId() == null) {
       return null;
     }
-    if (!appointmentRepository.existsById(appointmentDTO.getId())) {
+    if (!existsById(appointmentDTO.getId())) {
       return null;
     }
     Appointment appointment = appointmentRepository.save(IAppointmentService.appointmentDTOToEntity(appointmentDTO));
@@ -69,15 +68,30 @@ public class AppointmentService implements IAppointmentService {
   }
 
   @Override
-  public boolean deleteById(Long id) {
+  public Appointment deleteById(Long id) {
     if (id == null) {
-      return false;
+      throw new NullIdException("Id is null");
     }
-    if (!appointmentRepository.existsById(id)) {
-      return false;
+    if (!existsById(id)) {
+      throw new ResourceNotFoundException("Appointment not found with id: " + id);
     }
     appointmentRepository.deleteById(id);
-    return true;
+    Appointment appointment = findById(id);
+    appointmentRepository.deleteById(id);
+    return appointment;
+  }
+
+  @Override
+  public AppointmentDTO deleteByIdDTO(Long id) throws RuntimeException {
+    if (id == null) {
+      throw new NullIdException("Id is null");
+    }
+    if (!existsById(id)) {
+      throw new ResourceNotFoundException("Appointment not found with id: " + id);
+    }
+    AppointmentDTO appointmentDTO = IAppointmentService.appointmentToappointmentDTO(findById(id));
+    appointmentRepository.deleteById(id);
+    return appointmentDTO;
   }
 
   @Override

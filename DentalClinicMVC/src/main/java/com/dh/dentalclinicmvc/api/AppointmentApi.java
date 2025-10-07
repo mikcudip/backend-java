@@ -50,11 +50,11 @@ public class AppointmentApi {
   }
 
   @DeleteMapping("/{id}")
-  public ResponseEntity<String> deleteById(@PathVariable Long id) {
-    if (!appointmentService.deleteById(id)) {
+  public ResponseEntity<String> deleteById(@PathVariable Long id) throws RuntimeException {
+    if (appointmentService.deleteByIdDTO(id) == null) {
       return ResponseEntity.ok("No se puede eliminar un turno que no existe en la base de datos.");
     }
-    return ResponseEntity.ok("Se eliminó el turno.");
+    return ResponseEntity.ok("Se eliminó el turno con id: " + id);
   }
 
   @GetMapping("/{id}")

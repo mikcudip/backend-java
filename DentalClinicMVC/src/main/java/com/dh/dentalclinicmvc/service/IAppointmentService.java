@@ -14,6 +14,8 @@ public interface IAppointmentService extends IBaseService<Appointment, Long> {
 
   AppointmentDTO updateDTO(AppointmentDTO appointmentDTO);
 
+  AppointmentDTO deleteByIdDTO(Long id) throws RuntimeException;
+
   AppointmentDTO findByIdDTO(Long id);
 
   List<AppointmentDTO> findAllDTO();

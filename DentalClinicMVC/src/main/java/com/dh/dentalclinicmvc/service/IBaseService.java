@@ -7,7 +7,7 @@ public interface IBaseService<T, ID> {
 
   boolean update(T dentist);
 
-  boolean deleteById(ID id);
+  T deleteById(ID id);
 
   boolean existsById(ID id);
 
