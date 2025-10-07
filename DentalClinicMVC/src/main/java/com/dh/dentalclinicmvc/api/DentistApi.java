@@ -52,4 +52,13 @@ public class DentistApi {
   public ResponseEntity<List<Dentist>> findAll() {
     return ResponseEntity.ok(dentistService.findAll());
   }
+
+  @GetMapping("/registration/{registration}")
+  public ResponseEntity<Dentist> findByRegistration(@PathVariable Long registration) {
+    Dentist dentist = dentistService.findByRegistration(registration);
+    if (dentist == null) {
+      return ResponseEntity.notFound().build();
+    }
+    return ResponseEntity.ok(dentist);
+  }
 }

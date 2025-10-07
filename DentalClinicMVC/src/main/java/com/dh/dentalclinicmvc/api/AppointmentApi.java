@@ -1,7 +1,6 @@
 package com.dh.dentalclinicmvc.api;
 
 import com.dh.dentalclinicmvc.dto.AppointmentDTO;
-import com.dh.dentalclinicmvc.entity.Appointment;
 import com.dh.dentalclinicmvc.service.IAppointmentService;
 import com.dh.dentalclinicmvc.service.IDentistService;
 import com.dh.dentalclinicmvc.service.IPatientService;

@@ -6,6 +6,7 @@ import com.dh.dentalclinicmvc.service.IDentistService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class DentistService implements IDentistService {
@@ -49,7 +50,6 @@ public class DentistService implements IDentistService {
     return true;
   }
 
-
   @Override
   public boolean existsById(Long id) {
     return dentistRepository.existsById(id);
@@ -63,5 +63,10 @@ public class DentistService implements IDentistService {
   @Override
   public List<Dentist> findAll() {
     return dentistRepository.findAll();
+  }
+
+  @Override
+  public Dentist findByRegistration(Long registration) {
+    return dentistRepository.findByRegistration((registration)).orElse(null);
   }
 }
