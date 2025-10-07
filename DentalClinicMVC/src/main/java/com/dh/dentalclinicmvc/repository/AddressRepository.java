@@ -1,6 +1,6 @@
 package com.dh.dentalclinicmvc.repository;
 
-import com.dh.dentalclinicmvc.model.Address;
+import com.dh.dentalclinicmvc.entity.Address;
 import org.springframework.stereotype.Repository;
 
 @Repository

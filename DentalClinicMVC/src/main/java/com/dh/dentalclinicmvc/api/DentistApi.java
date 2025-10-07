@@ -1,6 +1,6 @@
 package com.dh.dentalclinicmvc.api;
 
-import com.dh.dentalclinicmvc.model.Dentist;
+import com.dh.dentalclinicmvc.entity.Dentist;
 import com.dh.dentalclinicmvc.service.IDentistService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/dentists")
-public class DentistApi implements BaseApi<Dentist, Long> {
+public class DentistApi {
   private final IDentistService dentistService;
 
   @Autowired
@@ -18,13 +18,11 @@ public class DentistApi implements BaseApi<Dentist, Long> {
     this.dentistService = dentistService;
   }
 
-  @Override
   @PostMapping
   public ResponseEntity<Dentist> save(@RequestBody Dentist dentist) {
     return ResponseEntity.ok(dentistService.save(dentist));
   }
 
-  @Override
   @PutMapping
   public ResponseEntity<String> update(@RequestBody Dentist dentist) {
     if (!dentistService.update(dentist)) {
@@ -33,7 +31,6 @@ public class DentistApi implements BaseApi<Dentist, Long> {
     return ResponseEntity.ok("Se actualizó el odontólogo.");
   }
 
-  @Override
   @DeleteMapping("/{id}")
   public ResponseEntity<String> deleteById(@PathVariable Long id) {
     if (!dentistService.deleteById(id)) {
@@ -42,7 +39,6 @@ public class DentistApi implements BaseApi<Dentist, Long> {
     return ResponseEntity.ok("Se eliminó el odontólogo.");
   }
 
-  @Override
   @GetMapping("/{id}")
   public ResponseEntity<Dentist> findById(@PathVariable Long id) {
     Dentist dentist = dentistService.findById(id);
@@ -52,7 +48,6 @@ public class DentistApi implements BaseApi<Dentist, Long> {
     return ResponseEntity.ok(dentist);
   }
 
-  @Override
   @GetMapping
   public ResponseEntity<List<Dentist>> findAll() {
     return ResponseEntity.ok(dentistService.findAll());

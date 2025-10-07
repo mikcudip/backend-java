@@ -1,6 +1,7 @@
 package com.dh.dentalclinicmvc.api;
 
-import com.dh.dentalclinicmvc.model.Appointment;
+import com.dh.dentalclinicmvc.dto.AppointmentDTO;
+import com.dh.dentalclinicmvc.entity.Appointment;
 import com.dh.dentalclinicmvc.service.IAppointmentService;
 import com.dh.dentalclinicmvc.service.IDentistService;
 import com.dh.dentalclinicmvc.service.IPatientService;
@@ -12,7 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/appointment")
-public class AppointmentApi implements BaseApi<Appointment, Long> {
+public class AppointmentApi {
   private final IAppointmentService appointmentService;
   private final IPatientService patientService;
   private final IDentistService dentistService;
@@ -24,34 +25,31 @@ public class AppointmentApi implements BaseApi<Appointment, Long> {
     this.dentistService = dentistService;
   }
 
-  @Override
   @PostMapping
-  public ResponseEntity<Appointment> save(@RequestBody Appointment appointment) {
-    if (!patientService.existsById(appointment.getPatient().getId())) {
+  public ResponseEntity<AppointmentDTO> save(@RequestBody AppointmentDTO appointmentDTO) {
+    if (!patientService.existsById(appointmentDTO.getPatientId())) {
       return ResponseEntity.badRequest().build();
     }
-    if (!dentistService.existsById(appointment.getDentist().getId())) {
+    if (!dentistService.existsById(appointmentDTO.getDentistId())) {
       return ResponseEntity.badRequest().build();
     }
-    return ResponseEntity.ok(appointmentService.save(appointment));
+    return ResponseEntity.ok(appointmentService.saveDTO(appointmentDTO));
   }
 
-  @Override
   @PutMapping
-  public ResponseEntity<String> update(@RequestBody Appointment appointment) {
-    if (!patientService.existsById(appointment.getPatient().getId())) {
-      return ResponseEntity.ok("No se puede actualizar un turno que no existe en la base de datos.");
+  public ResponseEntity<AppointmentDTO> update(@RequestBody AppointmentDTO appointmentDTO) {
+    if (!patientService.existsById(appointmentDTO.getPatientId())) {
+      return ResponseEntity.badRequest().build();
     }
-    if (!dentistService.existsById(appointment.getDentist().getId())) {
-      return ResponseEntity.ok("No se puede actualizar un turno que no existe en la base de datos.");
+    if (!dentistService.existsById(appointmentDTO.getDentistId())) {
+      return ResponseEntity.badRequest().build();
     }
-    if (!appointmentService.update(appointment)) {
-      return ResponseEntity.ok("No se puede actualizar un turno que no existe en la base de datos.");
+    if (!appointmentService.existsById(appointmentDTO.getId())) {
+      return ResponseEntity.badRequest().build();
     }
-    return ResponseEntity.ok("Se actualizó el turno.");
+    return ResponseEntity.ok(appointmentService.updateDTO(appointmentDTO));
   }
 
-  @Override
   @DeleteMapping("/{id}")
   public ResponseEntity<String> deleteById(@PathVariable Long id) {
     if (!appointmentService.deleteById(id)) {
@@ -60,19 +58,17 @@ public class AppointmentApi implements BaseApi<Appointment, Long> {
     return ResponseEntity.ok("Se eliminó el turno.");
   }
 
-  @Override
   @GetMapping("/{id}")
-  public ResponseEntity<Appointment> findById(@PathVariable Long id) {
-    Appointment appointment = appointmentService.findById(id);
-    if (appointment == null) {
+  public ResponseEntity<AppointmentDTO> findById(@PathVariable Long id) {
+    AppointmentDTO appointmentDTO = appointmentService.findByIdDTO(id);
+    if (appointmentDTO == null) {
       return ResponseEntity.notFound().build();
     }
-    return ResponseEntity.ok(appointment);
+    return ResponseEntity.ok(appointmentDTO);
   }
 
-  @Override
   @GetMapping
-  public ResponseEntity<List<Appointment>> findAll() {
-    return ResponseEntity.ok(appointmentService.findAll());
+  public ResponseEntity<List<AppointmentDTO>> findAll() {
+    return ResponseEntity.ok(appointmentService.findAllDTO());
   }
 }

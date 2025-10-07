@@ -1,6 +1,6 @@
 package com.dh.dentalclinicmvc.service;
 
-import com.dh.dentalclinicmvc.model.Dentist;
+import com.dh.dentalclinicmvc.entity.Dentist;
 
 public interface IDentistService extends IBaseService<Dentist, Long> {
 }

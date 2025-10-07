@@ -1,4 +1,4 @@
-package com.dh.dentalclinicmvc.model;
+package com.dh.dentalclinicmvc.entity;
 
 import jakarta.persistence.*;
 

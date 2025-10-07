@@ -1,6 +1,6 @@
 package com.dh.dentalclinicmvc.repository;
 
-import com.dh.dentalclinicmvc.model.Appointment;
+import com.dh.dentalclinicmvc.entity.Appointment;
 import org.springframework.stereotype.Repository;
 
 @Repository

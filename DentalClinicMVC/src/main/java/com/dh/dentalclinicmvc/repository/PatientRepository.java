@@ -1,6 +1,6 @@
 package com.dh.dentalclinicmvc.repository;
 
-import com.dh.dentalclinicmvc.model.Patient;
+import com.dh.dentalclinicmvc.entity.Patient;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;

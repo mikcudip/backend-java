@@ -1,7 +1,7 @@
 package com.dh.dentalclinicmvc.controller;
 
-import com.dh.dentalclinicmvc.model.Dentist;
-import com.dh.dentalclinicmvc.model.Patient;
+import com.dh.dentalclinicmvc.entity.Dentist;
+import com.dh.dentalclinicmvc.entity.Patient;
 import com.dh.dentalclinicmvc.service.impl.DentistService;
 import com.dh.dentalclinicmvc.service.impl.PatientService;
 import org.springframework.stereotype.Controller;

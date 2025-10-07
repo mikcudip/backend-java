@@ -1,6 +1,6 @@
 package com.dh.dentalclinicmvc.service.impl;
 
-import com.dh.dentalclinicmvc.model.Dentist;
+import com.dh.dentalclinicmvc.entity.Dentist;
 import com.dh.dentalclinicmvc.repository.DentistRepository;
 import com.dh.dentalclinicmvc.service.IDentistService;
 import org.springframework.stereotype.Service;
