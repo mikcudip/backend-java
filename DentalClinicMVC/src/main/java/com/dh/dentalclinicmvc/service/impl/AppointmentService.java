@@ -4,7 +4,6 @@ import com.dh.dentalclinicmvc.api.exception.NullIdException;
 import com.dh.dentalclinicmvc.api.exception.ResourceNotFoundException;
 import com.dh.dentalclinicmvc.dto.AppointmentDTO;
 import com.dh.dentalclinicmvc.entity.Appointment;
-import com.dh.dentalclinicmvc.entity.Dentist;
 import com.dh.dentalclinicmvc.repository.AppointmentRepository;
 import com.dh.dentalclinicmvc.service.IAppointmentService;
 import org.springframework.stereotype.Service;

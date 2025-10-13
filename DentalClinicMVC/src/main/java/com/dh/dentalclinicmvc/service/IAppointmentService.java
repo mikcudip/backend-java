@@ -21,6 +21,7 @@ public interface IAppointmentService extends IBaseService<Appointment, Long> {
   List<AppointmentDTO> findAllDTO();
 
   static AppointmentDTO appointmentToappointmentDTO(Appointment appointment) {
+    if (appointment == null) return null;
     if (appointment.getPatient() == null) return null;
     if (appointment.getDentist() == null) return null;
     if (appointment.getDate() == null) return null;
