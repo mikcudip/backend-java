@@ -1,9 +1,15 @@
 package com.dh.dentalclinicmvc.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "dentists")
 public class Dentist {
@@ -20,47 +26,4 @@ public class Dentist {
 
   @OneToMany(mappedBy = "dentist")
   private List<Appointment> appointment;
-
-  public Dentist() {
-  }
-
-  public Long getId() {
-    return id;
-  }
-
-  public void setId(Long id) {
-    this.id = id;
-  }
-
-  public String getFirstName() {
-    return firstName;
-  }
-
-  public void setFirstName(String firstName) {
-    this.firstName = firstName;
-  }
-
-  public String getLastName() {
-    return lastName;
-  }
-
-  public void setLastName(String lastName) {
-    this.lastName = lastName;
-  }
-
-  public Long getRegistration() {
-    return registration;
-  }
-
-  public void setRegistration(Long registration) {
-    this.registration = registration;
-  }
-
-  public List<Appointment> getAppointment() {
-    return appointment;
-  }
-
-  public void setAppointment(List<Appointment> appointment) {
-    this.appointment = appointment;
-  }
 }
